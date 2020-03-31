@@ -1,6 +1,6 @@
-package dataframes
+package dataframes.basics
 
-import dataframes.DataFrameUtils._
+import dataframes.basics.DataFrameUtils._
 import org.apache.spark.sql.types.{StructField, StructType}
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
 import org.scalatest.Assertion
