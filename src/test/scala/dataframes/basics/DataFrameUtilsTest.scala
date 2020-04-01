@@ -1,5 +1,6 @@
 package dataframes.basics
 
+import dataframes.TestUtils
 import dataframes.basics.DataFrameUtils._
 import org.apache.spark.sql.types.{StructField, StructType}
 import org.apache.spark.sql.{DataFrame, Row, SparkSession}
@@ -10,13 +11,8 @@ import org.slf4j.{Logger, LoggerFactory}
 class DataFrameUtilsTest extends AnyFunSuite {
 
   private val logger: Logger = LoggerFactory.getLogger(this.getClass)
-
-  private val sparkSession: SparkSession = SparkSession.builder
-    .appName("appTest")
-    .config("spark.master", "local")
-    .getOrCreate
-
-  private val jsonPath: String = "src/test/resources/data/cars.json"
+  private val sparkSession: SparkSession = TestUtils.sparkSession
+  private val jsonPath: String = s"${TestUtils.outputPath}/cars.json"
 
   test("DataFrameUtils.MustReadADataFrameWithInferSchema") {
     val dataFrame: DataFrame = readDataFrameWithInferSchema(sparkSession, jsonPath)
