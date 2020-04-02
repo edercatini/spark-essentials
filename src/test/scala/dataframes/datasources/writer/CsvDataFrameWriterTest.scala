@@ -8,7 +8,7 @@ import org.scalatest.funsuite.AnyFunSuite
 
 class CsvDataFrameWriterTest extends AnyFunSuite {
 
-  val outputPath: String = TestUtils.outputPath
+  val outputPath: String = TestUtils.path
   val writer: CsvDataFrameWriter = new CsvDataFrameWriter
   val fileSystem: FileSystem = FileSystem.get(new Configuration)
   val sparkSession: SparkSession = TestUtils.sparkSession

@@ -12,7 +12,7 @@ class DataFrameUtilsTest extends AnyFunSuite {
 
   private val logger: Logger = LoggerFactory.getLogger(this.getClass)
   private val sparkSession: SparkSession = TestUtils.sparkSession
-  private val jsonPath: String = s"${TestUtils.outputPath}/cars.json"
+  private val jsonPath: String = s"${TestUtils.path}/cars.json"
 
   test("DataFrameUtils.MustReadADataFrameWithInferSchema") {
     val dataFrame: DataFrame = readDataFrameWithInferSchema(sparkSession, jsonPath)

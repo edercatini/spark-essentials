@@ -4,7 +4,7 @@ import dataframes.datasources.writer.{CsvDataFrameWriter, DatabaseTableDataFrame
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
-object DataSourceExercises extends App {
+object ModuleExercises extends App {
 
   private val path: String = "src/main/resources/data"
   private val csvWriter: CsvDataFrameWriter = new CsvDataFrameWriter

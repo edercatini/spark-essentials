@@ -8,7 +8,7 @@ import org.scalatest.funsuite.AnyFunSuite
 
 class ParquetDataFrameWriterTest extends AnyFunSuite {
 
-  val outputPath: String = TestUtils.outputPath
+  val outputPath: String = TestUtils.path
   val writer: ParquetDataFrameWriter = new ParquetDataFrameWriter
   val fileSystem: FileSystem = FileSystem.get(new Configuration)
   val sparkSession: SparkSession = TestUtils.sparkSession

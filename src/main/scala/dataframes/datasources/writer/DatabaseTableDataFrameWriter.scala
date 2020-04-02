@@ -8,7 +8,7 @@ class DatabaseTableDataFrameWriter extends DataFrameWriter {
 
   override def write(dataFrame: DataFrame, outputPath: String): Unit = {
 
-    def getConnectionProperties(): Properties = {
+    def getConnectionProperties: Properties = {
       val connectionProperties: Properties = new Properties
       connectionProperties.setProperty("driver", "org.postgresql.Driver")
       connectionProperties.setProperty("user", "docker")
@@ -19,6 +19,6 @@ class DatabaseTableDataFrameWriter extends DataFrameWriter {
 
     dataFrame.write
       .mode(SaveMode.Overwrite)
-      .jdbc("jdbc:postgresql://localhost:5432/rtjvm", "public.movies", getConnectionProperties())
+      .jdbc("jdbc:postgresql://localhost:5432/rtjvm", "public.movies", getConnectionProperties)
   }
 }
