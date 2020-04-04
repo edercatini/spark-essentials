@@ -33,7 +33,8 @@ object ModuleExercises extends App {
   val titlesDataFrame: DataFrame = getData("titles")
 
   logger.debug("Show all employees and their max salary")
-  val maxSalaries: DataFrame = salariesDataFrame.groupBy("emp_no").agg(max("salary").as("maxSalary")).show
+  val maxSalaries: DataFrame = salariesDataFrame.groupBy("emp_no").agg(max("salary").as("maxSalary"))
+  maxSalaries.show
 
   logger.debug("Show all employees who were never managers")
   employeesDataFrame
