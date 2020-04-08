@@ -1,5 +1,0 @@
-package playground
-
-object Playground {
-
-}
